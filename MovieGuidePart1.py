@@ -2,25 +2,26 @@
 #CIS261
 #MovieGuidePart1
 
-def Display_movie():
+def display_movielist():
     print("Movie List\n")
     print("Command Menu")
-    print("List - Show all movies")
-    print("Add - Add a new movie")
-    print("Remove - Delete a movie from list")
-    print("Exit - leave the list\n")
+    print("list - Show all movies")
+    print("add - Add a new movie")
+    print("remove - Delete a movie from list")
+    print("done - leave the list\n")
 
-def List(movie_list):
-    for l, movie in enumerate(movie_list, start=1):
-        print(f"{l}. {movies}")
+def list(movie_list):
+    for m, movie in enumerate(movie_list, start=1):
+        print(f"{m}. {movie}")
+    print()
     
 
-def Add(movie_list):
+def add(movie_list):
     movie = input("Enter Movie name: ")
     movie_list.append(movie)
     print(f'{movie} has been added.\n')
 
-def Remove(movie_list):
+def remove(movie_list):
     number = int(input("Number: "))
     if number < 1 or number > len(movie_list):
         print("Invalid movie number.\n")
@@ -30,6 +31,28 @@ def Remove(movie_list):
 
 
 def main():
-   movie_list["Nobody," "Mean Girls," "Boyz N the Hood"]
+   movie_list = ["Nobody",
+                "Mean Girls", 
+                "Boyz N the Hood"]
 
-   display_menu()
+   display_movielist()
+
+   while True:        
+        command = input("Command: ")
+        if command.lower() == "list":
+            list(movie_list)   
+        elif command.lower() == "add":
+            add(movie_list)
+        elif command.lower() == "del":
+            remove(movie_list)  
+        elif command.lower() == "done":
+            break
+        else:
+            print("Not a valid command. Please try again.\n")
+
+    print("See Ya!")
+    
+
+if __name__ == "__main__":
+    main()
+
