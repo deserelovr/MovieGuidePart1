@@ -43,14 +43,14 @@ def main():
             list(movie_list)   
         elif command.lower() == "add":
             add(movie_list)
-        elif command.lower() == "del":
+        elif command.lower() == "remove":
             remove(movie_list)  
         elif command.lower() == "done":
             break
         else:
             print("Not a valid command. Please try again.\n")
 
-    print("See Ya!")
+   print("See Ya!")
     
 
 if __name__ == "__main__":
